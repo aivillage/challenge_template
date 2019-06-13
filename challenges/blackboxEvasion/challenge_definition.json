@@ -1,0 +1,29 @@
+    {
+    "ctfd": {
+        "type": "extended",
+        "name": "Blackbox attack Level 1",
+        "category": "Adversarial",
+        "message": "Here's a CSV with 20 samples from the EMBER dataset. We have a hidden model trained on the complete EMBER dataset. Manipulate these to confuse our hidden model. The results should be a CSV within 0.1 units from the $L_infty$ norm from these and in the same order.",
+        "value": 400,
+        "flag_type": "static",
+        "flag": "Papernot2015",
+        "attempt_limit": -1
+
+    },
+    "static_files": {
+        "public_files": {
+            "image.png": "sources.png",
+            "mnistMLP.pkl": "mnistMLP.pkl",
+            "mnistMLP.py": "mnistMLP.py" 
+        }
+    },
+    "deployment": {
+        "dockerfile": "Dockerfile",
+        "setup_type": "install.sh",
+        "run_type": "run.sh"
+    },
+    "custom_flag_check": {
+        "consolation_message": "If you want help with this track, just ask a volunteer!",
+        "congratulations_message": "You got it! Whoo! Learning!"
+    }
+}

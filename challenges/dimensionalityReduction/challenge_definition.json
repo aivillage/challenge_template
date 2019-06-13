@@ -1,0 +1,21 @@
+{
+    "ctfd": {
+        "type": "standard",
+        "name": "Dimensionality Reduction",
+        "category": "Maths",
+        "message": "Here are some datasets that have been sampled from various contexts. Give us the underlying dimensions in order with commas seperating them.",
+        "value": 100,
+        "flag_type": "static",
+        "flag": "3,4,8,12,1",
+        "attempt_limit": -1
+    },
+    "static_files": {
+        "public_files": {
+            "dimensionalityDataset_0.npy": "dimensionalityDataset_0.npy",
+            "dimensionalityDataset_1.npy": "dimensionalityDataset_1.npy",
+            "dimensionalityDataset_2.npy": "dimensionalityDataset_2.npy",
+            "dimensionalityDataset_3.npy": "dimensionalityDataset_3.npy",
+            "dimensionalityDataset_4.npy": "dimensionalityDataset_4.npy"
+        }
+    },
+}

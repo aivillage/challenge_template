@@ -1,0 +1,27 @@
+{
+    "ctfd": {
+        "type": "extended",
+        "name": "Fast Gradient Sign Method",
+        "category": "Adversarial",
+        "message": "Generate a fast gradient sign method attack with the given model and image. The result should be a valid imaged exactly 0.1 units away under the $L_\infty$ norm.",
+        "value": 100,
+        "flag_type": "static",
+        "flag": "Szegedny2014",
+        "attempt_limit": -1
+
+    },
+    "static_files": {
+        "public_files": {
+            "image.png": "sources.png",
+            "mnistMLP.pkl": "mnistMLP.pkl",
+            "mnistMLP.py": "mnistMLP.py" 
+        }
+    },
+    "deployment": {
+        "dockerfile": true,
+    },
+    "custom_flag_check": {
+        "consolation_message": "If you want help with this track, just ask a volunteer!",
+        "congratulations_message": "You got it! Whoo! Learning!"
+    }
+}

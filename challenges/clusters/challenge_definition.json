@@ -1,0 +1,21 @@
+{
+    "ctfd": {
+        "type": "standard",
+        "name": "Cluster Count",
+        "category": "Maths",
+        "message": "Here are some datasets that have been sampled from various contexts. Give us the number of clusters in each dataset in order with commas seperating them.",
+        "value": 100,
+        "flag_type": "static",
+        "flag": "6,8,8,2,4",
+        "attempt_limit": -1
+    },
+    "static_files": {
+        "public_files": {
+            "clusterCountDataset_0.npy": "clusterCountDataset_0.npy",
+            "clusterCountDataset_1.npy": "clusterCountDataset_1.npy",
+            "clusterCountDataset_2.npy": "clusterCountDataset_2.npy",
+            "clusterCountDataset_3.npy": "clusterCountDataset_3.npy",
+            "clusterCountDataset_4.npy": "clusterCountDataset_4.npy"
+        }
+    },
+}
