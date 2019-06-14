@@ -1,15 +1,17 @@
 # Use the official Python image.
 # https://hub.docker.com/_/python
 FROM python:3.7
+COPY docker/requirements.txt .
+# Install production dependencies.
+RUN pip install Flask gunicorn
+RUN pip install -r requirements.txt
 
 # Copy local code to the container image.
 ENV APP_HOME /app
 WORKDIR $APP_HOME
-COPY . .
-
-# Install production dependencies.
-RUN pip install Flask gunicorn
-RUN pip install -r requirements.txt
+COPY docker/* ./
+COPY docker/templates/* ./templates/
+COPY challenge_definition.json .
 
 # Run the web service on container startup. Here we use the gunicorn
 # webserver, with one worker process and 8 threads.

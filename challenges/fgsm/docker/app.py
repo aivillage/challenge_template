@@ -3,7 +3,6 @@ import json
 app = Flask(__name__, static_url_path="", static_folder=".")
 from check import score_submission
 
-
 CONFIGURATION = {}
 with open("challenge_definition.json", "r") as f:
     CONFIGURATION = json.load(f)
@@ -16,10 +15,9 @@ def upload_file():
             flash('No file part')
             return redirect(request.url)
         file = request.files['file']
-        data = file.read()
         try:
-            response = score_submission(data)
-            if response is True:
+            response = score_submission(file)
+            if response:
                 return render_template(
                     "index.html",
                     challenge_name=CONFIGURATION["ctfd"]["name"],
@@ -41,9 +39,11 @@ def upload_file():
                 challenge_description=CONFIGURATION["ctfd"]["message"],
                 submission_response="Something broke, try again",
             )
-
     return render_template(
             "index.html",
             challenge_name=CONFIGURATION["ctfd"]["name"],
             challenge_description=CONFIGURATION["ctfd"]["message"],
         )
+
+if __name__ == "__main__":
+    app.run(debug=True,host='0.0.0.0',port=int(os.environ.get('PORT', 8080)))
