@@ -7,7 +7,6 @@ CONFIGURATION = {}
 with open("challenge_definition.json", "r") as f:
     CONFIGURATION = json.load(f)
 
-
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
