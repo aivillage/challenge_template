@@ -40,5 +40,5 @@ if __name__ == "__main__":
     testloader = mnist.testing()
     accuracy = testAccuracy(net,testloader)
     
-    print('Saving as: mnistConvNet.pickle')
-    torch.save(net,"mnistConvNet.pickle")
+    print('Saving as: mnistMKL.pkl')
+    torch.save(net,"mnistMKL.pkl")

@@ -1,6 +1,9 @@
 from flask import Flask, request, flash, redirect, url_for, send_from_directory, render_template
 import json
 application = Flask(__name__, static_url_path="", static_folder=".")
+
+application.config['SECRET_KEY'] = 'PLEASE REPLACE ME BEFORE DEPLOYING'  
+
 from check import score_submission
 
 CONFIGURATION = {}
@@ -14,23 +17,24 @@ def upload_file():
             flash('No file part')
             return redirect(request.url)
         file = request.files['file']
-        try:
-            response = score_submission(file)
-            if response:
-                return render_template(
-                    "index.html",
-                    challenge_name=CONFIGURATION["ctfd"]["name"],
-                    challenge_description=CONFIGURATION["ctfd"]["message"],
-                    submission_response=CONFIGURATION["custom_flag_check"]["congratulations_message"],
-                    flag=CONFIGURATION["ctfd"]["flag"]
-                )
-            else:
-                return render_template(
-                    "index.html",
-                    challenge_name=CONFIGURATION["ctfd"]["name"],
-                    challenge_description=CONFIGURATION["ctfd"]["message"],
-                    submission_response=CONFIGURATION["custom_flag_check"]["consolation_message"],
-                )
+        #try:
+        response = score_submission(file)
+        if response:
+            return render_template(
+                "index.html",
+                challenge_name=CONFIGURATION["ctfd"]["name"],
+                challenge_description=CONFIGURATION["ctfd"]["message"],
+                submission_response=CONFIGURATION["custom_flag_check"]["congratulations_message"],
+                flag=CONFIGURATION["ctfd"]["flag"]
+            )
+        else:
+            return render_template(
+                "index.html",
+                challenge_name=CONFIGURATION["ctfd"]["name"],
+                challenge_description=CONFIGURATION["ctfd"]["message"],
+                submission_response=CONFIGURATION["custom_flag_check"]["consolation_message"],
+            )
+        '''
         except:
             return render_template(
                 "index.html",
@@ -38,6 +42,7 @@ def upload_file():
                 challenge_description=CONFIGURATION["ctfd"]["message"],
                 submission_response="Something broke, try again",
             )
+        '''
     return render_template(
             "index.html",
             challenge_name=CONFIGURATION["ctfd"]["name"],

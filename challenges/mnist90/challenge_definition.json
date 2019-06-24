@@ -1,0 +1,17 @@
+{
+    "ctfd": {
+        "type": "extended",
+        "name": "The MNIST challenge",
+        "category": "Basics",
+        "message": "Build some ML system that gets 90% accuracy on MNIST. You can cheat, but you'd only be cheating yourself",
+        "value": 100,
+        "flag_type": "static",
+        "flag": "LeNet1989",
+        "attempt_limit": -1
+    },
+    "dockerfile": true,
+    "custom_flag_check": {
+        "consolation_message": "If you want help with this track, just ask a volunteer!",
+        "congratulations_message": "You got it! Whoo! Learning!"
+    }
+}
